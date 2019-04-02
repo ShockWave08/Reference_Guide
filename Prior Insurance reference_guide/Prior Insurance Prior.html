@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+	<head>
+		<title>Prior Insurance</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<style>
+		
+		body{ 
+			padding:0;
+			margin: 0;
+		}
+		
+		.bgimg{
+			padding-bottom: 3rem;
+		}
+		
+		.btn-group{
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+					border-radius: 25px;					
+					-webkit-border-radius: 25px;					
+					-moz-border-radius: 25px;
+			}
+		
+		.menucont{
+			position:relative;
+			height: auto;
+			width: auto; 
+		}
+
+		.menu1{ 
+			position:relative;
+			text-align: center;
+			font-family:comic sans ms;
+		}
+
+		.menu2{ 
+			position:relative;
+			text-align: center;
+			font-family:comic sans ms;
+		}
+
+		.menu3{ 
+			position:relative;
+			text-align: center;
+			font-family:comic sans ms;
+		}
+		
+		.menu1:hover{
+			color:#66b3ff;
+			background-color:#FFFFFF;
+			box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+				-webkit-box-shadow: 8px 8px px #aaa;
+				-moz-box-shadow: 8px 8px 6px #aaa;
+		}
+		.menu2:hover{
+			color:#4169E1;
+			background-color:#FFFFFF;
+			box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+				-webkit-box-shadow: 8px 8px px #aaa;
+				-moz-box-shadow: 8px 8px 6px #aaa;
+		}
+		.menu3:hover{
+			color:#DC143C;
+			background-color:#FFFFFF;
+			box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+				-webkit-box-shadow: 8px 8px px #aaa;
+				-moz-box-shadow: 8px 8px 6px #aaa;
+		}
+
+		div.menu1:hover {color:blue;}
+		div.menu2:hover {color:blue;}
+		div.menu3:hover {color:blue;}
+		
+		h1{text-align: Center; color: blue; font-family:Times New Roman;}
+		h2{text-align: Left; color:red; font-family:comic sans ms;}
+		p{color: blue; font-family:verdana;}
+		
+		.panel-default {font-weight: bold;}
+		.panel-body {background: #ff4d4d; color:#FFFFFF; font-weight:bold;}
+		
+		#footer {
+			height:25px;
+			width:100%;
+			z-index:10;
+			position:fixed;
+			bottom:0px;
+			background-color:#66b3ff;
+			background-image: url("pics/footer1.png");
+			background-repeat: repeat;
+		}
+
+		.footer-text{
+			font-family: "Lucida Bright", Georgia, Serif;
+			color: #FFFFF0;
+			font-size: 85%;
+			font-weight: bold;
+			font-style: italic;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 15px;
+			text-align: center;
+					}
+		</style>
+
+
+		<!-- This function is to hide all contents in the body of the webpage upon succesfull loading of the webpage -->
+		<script>
+		function hideInfoOnPageLoad()
+		{
+			document.getElementById('proof').style.display = 'none';
+			document.getElementById('fna').style.display = 'none';
+			document.getElementById('stan').style.display = 'none';
+		}
+
+		</script>
+
+		<!-- This JQuery function causes the menu bar and menu items to go from side to side upon loading the page -->
+		<script> 
+		$(document).ready(function(){
+		var div=$(".menucont");
+		  div.animate({left:'550px'},"slow");
+		  div.animate({left:'-300px'},"slow");
+		  div.animate({left:'400px'},"slow");
+		  div.animate({left:'-200px'},"slow");
+		  div.animate({left:'-100px'},"slow");
+		  div.animate({left:'0px'},"slow");
+		  var div=$(".menu1");
+		  div.animate({left:'-350px'},"slow");
+		  div.animate({left:'350px'},"slow");
+		  div.animate({left:'-200px'},"slow");
+		  div.animate({left:'50px'},"slow");
+		  div.animate({left:'0px'},"slow");
+		  var div=$(".menu2");
+		  div.animate({left:'-50px'},"slow");
+		  div.animate({left:'-300px'},"slow");
+		  div.animate({left:'200px'},"slow");
+		  div.animate({left:'-20px'},"slow");
+		  div.animate({left:'0px'},"slow");
+		  var div=$(".menu3");
+		  div.animate({left:'150px'},"slow");
+		  div.animate({left:'-40px'},"slow");
+		  div.animate({left:'150px'},"slow");
+		  div.animate({left:'-40px'},"slow");
+		  div.animate({left:'0px'},"slow");
+		  });  
+		</script>
+
+		 <!-- This JQuery fucntion allows me to click menu1("proof")and slides up or hides the 2 other menu items ("fna")("standard") -->
+		<script>  $(document).ready(function(){
+				$(".menu1").click(function(){
+				$("#fna").slideUp("slow");
+				$("#stan").slideUp("slow");
+				$("#proof").slideToggle("slow");
+			});
+			
+		});
+		</script>
+
+		<!-- This JQuery fucntion allows me to click menu2("fna")and slides up or hides the 2 other menu items ("proof")("standard") -->
+		<script>  $(document).ready(function(){
+				$(".menu2").click(function(){
+				$("#proof").slideUp("slow");
+				$("#stan").slideUp("slow");
+				$("#fna").slideToggle("slow");
+			});
+		});
+		</script>
+
+		<!-- This JQuery fucntion allows me to click menu3("fna")and slides up or hides the 2 other menu items ("proof")("fna") -->
+		<script>  $(document).ready(function(){
+				$(".menu3").click(function(){
+				$("#proof").slideUp("slow");
+				$("#fna").slideUp("slow");
+				$("#stan").slideToggle("slow");
+			});
+		});
+		</script>
+
+
+	</head>
+
+	<!-- This invokation of the hideInfoOnLoad fuction in the body, enables the fucntion to run when the body is webpage is fully loaded -->
+	<body onload = "hideInfoOnPageLoad()">
+	
+		<!-- Farmers logo -->
+			<div class = "row">
+			
+				<div class = "col-md-5"></div>
+					<div class = "col-md-2">
+						<div class = "bgimg" style = "height:auto; width:auto;">
+							<img src = "Farmers_logo.png" alt = "Mountain View" style = "width:15rem;height:10rem;">
+						</div>
+					</div>	
+				<div class = "col-md-5"></div>	
+			</div>
+		
+			<div class = "row">
+				<div class = "col-sm-3"></div>
+				<div class = "col-sm-8">	
+					<div class = "row">
+						<div class = "menucont">
+							<div class = "btn-group">
+									<button type="button" class="btn btn-info menu1" ><B>Proof or Prior (BrightLine)</B></button>
+									<button type="button" class="btn btn-primary menu2"><B>Prior Insurance Documentation FNA</B></button>
+									<button type="button" class="btn btn-danger menu3"><B>Prior Insurance Standard Carrier</B></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "col-sm-1"></div>
+			</div>
+
+			<br><br>
+			<br><br>
+
+			<div class="container" style = "padding-top: 4rem; padding-bottom: 5rem;">
+			
+				<div id = "proof">
+					
+					<H1>Proof of Prior (BrightLine)</H1>
+					<p><strong>Note:</strong> Please <strong>Contact</strong> Lee Daniel or Craig Lecointe for any information or updates you disagree with or you feel should be added.</p>
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Can we use Farmers documents in Proof of prior Insurance?</a>
+							</h4>
+						  </div>
+						  <div id="collapse1" class="panel-collapse collapse in">
+							<div class="panel-body">Yes we can! If there are any lapses in the prior 6 months of policy and the document 
+								does not indicate the exact lapse, then we should use the policy number found on the document to pull up the policy from express. 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Should a DMV (BOS) form have (two) 2 signatures?</a>
+							</h4>
+						  </div>
+						  <div id="collapse2" class="panel-collapse collapse">
+							<div class="panel-body">Not necessarily! A DMV form can have one to none signatures. If there isn’t any area for a signature on 
+								the form and the information we need can be found, then it can be approved.
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Should we ensure that all Bill of Sales have (two) 2 signatures?</a>
+							</h4>
+						  </div>
+						  <div id="collapse3" class="panel-collapse collapse">
+							<div class="panel-body">Yes! Bill of Sales that aren’t DMV forms should have two (2) signatures. One from the buyer 
+								and one from the seller. Buyers can also be represented on documents as lessee and purchaser, also sellers may be represented as lesser.
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">One of the signatures in the Bill of Sale looks like a font style, is it acceptable?</a>
+							</h4>
+						  </div>
+						  <div id="collapse4" class="panel-collapse collapse">
+							<div class="panel-body">Yes it is! 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">How can we identify an agent generated document?</a>
+							</h4>
+						  </div>
+						  <div id="collapse5" class="panel-collapse collapse">
+							<div class="panel-body">Usually a document from an agent would come from an agency or underwritten by an agency. 
+								Some agent generated would come from lexus nexus. Some would be screen prints from express or green screen. 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">How can we identify document are wrong document?</a>
+							</h4>
+						  </div>
+						  <div id="collapse6" class="panel-collapse collapse">
+							<div class="panel-body">
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">What do we look for on military or missionary documents, when processing Innocent no prior policies?</a>
+							</h4>
+						  </div>
+						  <div id="collapse7" class="panel-collapse collapse">
+							<div class="panel-body">
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Can i use an application of insurance to validate a policy? </a>
+							</h4>
+						  </div>
+						  <div id="collapse8" class="panel-collapse collapse">
+							<div class="panel-body"> 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">what should i do if there is no new business date in the versions screen?</a>
+							</h4>
+						  </div>
+						  <div id="collapse9" class="panel-collapse collapse">
+							<div class="panel-body">
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">How should i process documents that mention the insured as an operator?</a>
+							</h4>
+						  </div>
+						  <div id="collapse10" class="panel-collapse collapse">
+							<div class="panel-body"> 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">What states can i work bill of sale if Proof of Prior?</a>
+							</h4>
+						  </div>
+						  <div id="collapse10" class="panel-collapse collapse">
+							<div class="panel-body"> Effective July 12, 2016, a bill of sale is only acceptable in the states of IN, MI, MT, OT, OR & UT.
+								If a bill of sale is found in any state that is not on the list, it should be rejected for wrong document.
+							</div>
+						  </div>
+						</div>
+					</div> <!-- accordion -->
+				</div> <!-- end of proof-->
+				
+				<div id = "fna">
+					
+					<H1>Prior Insurance Documentation FNA</H1>
+					  
+					<p><strong>Note:</strong> Please <strong>Contact</strong> Lee Daniel or Craig Lecointe for any information or updates you disagree with or you feel should be added.</p>
+					  
+					<div class="panel-group" id="accordion2">
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse1a">Which of the states are smart states?</a>
+							</h4>
+						  </div>
+						  <div id="collapse1a" class="panel-collapse collapse in">
+							<div class="panel-body"> AZ(88), AR(18), OK(08), OH(25), CT(82).
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse2a">Do we have to tier the policy in green screen for smart states?</a>
+							</h4>
+						  </div>
+						  <div id="collapse2a" class="panel-collapse collapse">
+							<div class="panel-body">No we don’t! In the smart sates the tiers are automatically calculated.
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse3a">In what states, can we use the speeding citation to tier the policy?</a>
+							</h4>
+						  </div>
+						  <div id="collapse3a" class="panel-collapse collapse">
+							<div class="panel-body">There is only one state where we can use the speeding indication under citation description,
+								which is Pennsylvania (PA-06).
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse4a">What states can we use bill of sale in Prior Insurance Documentation FNA?</a>
+							</h4>
+						  </div>
+						  <div id="collapse4a" class="panel-collapse collapse">
+							<div class="panel-body"> In FNA, we work Bill of Sales in the same states as we do in Proof of Prior. Effective July 12, 2016, a bill of sale is only acceptable in the states of IN, MI, MT, OT, OR & UT.
+								If a bill of sale is found in any state that is not on the list, it should be rejected for wrong document.
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse5a">Can i use an application of insurance to validate a policy?</a>
+							</h4>
+						  </div>
+						  <div id="collapse5a" class="panel-collapse collapse">
+							<div class="panel-body"> 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse6a">what should i do if there is no new business date in the versions screen?</a>
+							</h4>
+						  </div>
+						  <div id="collapse6a" class="panel-collapse collapse">
+							<div class="panel-body">
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse7a">How can we identify document are wrong document?</a>
+							</h4>
+						  </div>
+						  <div id="collapse7a" class="panel-collapse collapse">
+							<div class="panel-body">
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse8a">What do we look for on military or missionary documents, when processing Innocent no prior policies?</a>
+							</h4>
+						  </div>
+						  <div id="collapse8a" class="panel-collapse collapse">
+							<div class="panel-body">
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse9a">How should i process documents that mention the insured as an operator?</a>
+							</h4>
+						  </div>
+						  <div id="collapse9a" class="panel-collapse collapse">
+							<div class="panel-body">
+							</div>
+						  </div>
+						</div>	
+					</div> <!-- accordion -->
+				</div> <!-- end of fna-->
+					
+				<div id = "stan">
+				
+					<H1>Prior Insurance Standard Carrier</H1>
+					
+					<p><strong>Note:</strong> Please <strong>Contact</strong> Lee Daniel or Craig Lecointe for any information or updates you disagree with or you feel should be added.</p>
+					
+					<div class="panel-group" id="accordion3">
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse1b">Can we use documents underwritten by farmers?</a>
+							</h4>
+						  </div>
+						  <div id="collapse1b" class="panel-collapse collapse in">
+							<div class="panel-body"> No we can’t!
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse2b">Which company within the farmers group of companies can we use? </a>
+							</h4>
+						  </div>
+						  <div id="collapse2b" class="panel-collapse collapse">
+							<div class="panel-body"> 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3b">Can we use documents with a lapse in prior 6 months of coverage?</a>
+							</h4>
+						  </div>
+						  <div id="collapse3b" class="panel-collapse collapse">
+							<div class="panel-body"> No we can’t! If the expiration date or cancel date of 6 months prior coverage on the document does
+								not fall exactly on the new business date or beyond the new business date, we considerate having a lapse in the 6 months of prior insurance.
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse4b">Can we use Bill of Sale in Prior Insurance standard?</a>
+							</h4>
+						  </div>
+						  <div id="collapse4b" class="panel-collapse collapse">
+							<div class="panel-body"> Sure! Sure we can but only in the state of Minnesota (MN-13).
+							</div>
+						  </div>
+						</div>
+
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse5b">Can i use an application of insurance to validate a policy? </a>
+							</h4>
+						  </div>
+						  <div id="collapse5b" class="panel-collapse collapse">
+							<div class="panel-body"> 
+							</div>
+						  </div>
+						</div>
+						
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse6b">what should i do if there is no new business date in the versions screen?</a>
+							</h4>
+						  </div>
+						  <div id="collapse6b" class="panel-collapse collapse">
+							<div class="panel-body"> 
+							</div>
+						  </div>
+						</div>
+
+						<div class="panel panel-primary">
+						  <div class="panel-heading">
+							<h4 class="panel-title">
+							  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse7b">How should i process documents that mention the insured as an operator?</a>
+							</h4>
+						  </div>
+						  <div id="collapse7b" class="panel-collapse collapse">
+							<div class="panel-body"> 
+							</div>
+						  </div>
+						</div>
+					</div> <!-- accordion -->
+				</div> <!-- end of stan-->
+				
+				
+			</div> <!-- end of container-->
+		
+			<div class="container-fluid" id="footer" style="height:auto;">
+				<div class="row"  style="width:auto;">
+					<div class="col-sm-12 "><p class="footer-text" align="middle">Created by Lee Daniel</p></div>
+				</div>
+			</div>
+	</body>
+</html>

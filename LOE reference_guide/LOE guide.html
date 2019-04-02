@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+	<head>
+		<title>CVL/LOE</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<style>
+		
+			.bgimg{
+				padding-bottom: 1rem;
+			}
+			
+			.btn-group{
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+					border-radius: 25px;					
+					-webkit-border-radius: 25px;					
+					-moz-border-radius: 25px;					
+					
+			}
+			
+			.menucont{
+				height: auto;
+				width: auto; 
+			}
+
+			.menu1{ 
+				position:relative;
+				text-align: center;
+				font-weight: bold;
+				font-family:comic sans ms;
+			}
+
+			.menu2{ 
+				position:relative;
+				text-align: center;
+				font-weight: bold;
+				font-family:comic sans ms;
+			}
+
+			.menu1:hover {
+				color:#DC143C;
+				background-color:#FFFFFF;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.menu2:hover {
+				background-color:#FFFFFF;
+				color:#4169E1;
+				box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 10px 8px 8px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			#submenucont{
+				height:auto;
+				width: auto;
+			}
+			
+			.submenu1:hover{
+				background-color:#FFFFFF;
+				color:#DC143C;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.submenu2:hover{
+				background-color:#FFFFFF;
+				color:#4169E1;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.submenu3:hover{
+				background-color:#FFFFFF;
+				color:#FFA500;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.submenu4:hover{
+				background-color:#FFFFFF;
+				color:#66b3ff;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.generala:hover{
+				background-color:#FFFFFF;
+				color:#32CD32;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			#submenucont2{
+				height:auto;
+				width: 300;
+			}
+			
+			.submenua:hover{
+				background-color:#FFFFFF;
+				color:#DC143C;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.submenub:hover{
+				background-color:#FFFFFF;
+				color:#4169E1;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.submenuc:hover{
+				background-color:#FFFFFF;
+				color:#FFA500;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.submenud:hover{
+				background-color:#FFFFFF;
+				color:#66b3ff;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.generalb:hover{
+				background-color:#FFFFFF;
+				color:#32CD32;
+				box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+					-webkit-box-shadow: 8px 8px px #aaa;
+					-moz-box-shadow: 8px 8px 6px #aaa;
+			}
+			
+			.button {
+				-webkit-transition-duration: 0.4s; /* Safari */
+				transition-duration: 0.4s;
+			}
+
+			.button:hover {
+				background-color: #4CAF50; /* Green */
+				color: white;
+			}
+
+			body{ 
+				padding:0;
+				margin: 0;
+			}
+			
+			h1{text-align: Center; color: blue; font-family:Times New Roman; font-family:comic sans ms;}
+			h2{text-align: Left; color:red; font-family:comic sans ms;}
+			p{color: blue; font-family:verdana;}
+			
+			.panel-default {font-weight: bold;}
+			.panel-body {background: #ff4d4d; color:#FFFFFF; font-weight:bold;}
+			
+			#footer {
+				height:25px;
+				width:100%;
+				z-index:10;
+				position:fixed;
+				bottom:0px;
+				background-color:#66b3ff;
+				background-image: url("pics/footer1.png");
+				background-repeat: repeat;
+			}
+
+			.footer-text{
+				font-family: "Lucida Bright", Georgia, Serif;
+				color: #FFFFF0;
+				font-size: 85%;
+				font-weight: bold;
+				font-style: italic;
+				margin-left: auto;
+				margin-right: auto;
+				padding-top: 15px;
+				text-align: center;
+			}
+		</style>
+		
+
+
+		<!-- This function is to hide all contents in the body of the webpage upon succesfull loading of the webpage -->
+		<script>
+			function hideInfoOnPageLoad()
+			{
+				document.getElementById('submenucont').style.display = 'none';
+				document.getElementById('submenucont2').style.display = 'none';
+				document.getElementById('Generala').style.display = 'none';
+				document.getElementById('Generalb').style.display = 'none';
+				document.getElementById('Driver').style.display = 'none';
+				document.getElementById('Household').style.display = 'none';
+				document.getElementById('Vehicle').style.display = 'none';
+				document.getElementById('Policy').style.display = 'none';
+				document.getElementById('16A').style.display = 'none';
+				document.getElementById('16B').style.display = 'none';
+				document.getElementById('16L').style.display = 'none';
+				document.getElementById('16').style.display = 'none';	
+			}
+		</script>
+
+		<!-- This JQuery function causes the menu bar and menu items to go from side to side upon loading the page -->
+		<script> 
+			$(document).ready(function(){
+			var div=$(".menucont");
+			  div.animate({left:'550px'},"slow");
+			  div.animate({left:'-230px'},"slow");
+			  div.animate({left:'400px'},"slow");
+			  div.animate({left:'-300px'},"slow");
+			  div.animate({left:'200px'},"slow");
+			  div.animate({left:'0px'},"slow");
+			var div=$(".menu1");
+			  div.animate({left:'450px'},"slow");
+			  div.animate({left:'-90px'},"slow");
+			  div.animate({left:'200px'},"slow");
+			  div.animate({left:'-5px'},"slow");
+			  div.animate({left:'0px'},"slow");
+			var div=$(".menu2");
+			  div.animate({left:'1550px'},"slow");
+			  div.animate({left:'-30px'},"slow");
+			  div.animate({left:'700px'},"slow");
+			  div.animate({left:'-20px'},"slow");
+			  div.animate({left:'0px'},"slow");
+			  });
+		</script>
+
+		<!-- This JQuery fucntion allows me to click menu1("proof")and slides up or hides the 2 other menu items ("fna")("standard") -->
+		<script>  
+			$(document).ready(function(){
+					$(".menu1").click(function(){
+					$("#submenucont").slideToggle("fast");
+					$("#submenucont2").slideUp("fast");
+					$("#Generalb").slideUp("slow");
+					$("#16A").slideUp("slow");
+					$("#16B").slideUp("slow");
+					$("#16L").slideUp("slow");
+					$("#16").slideUp("slow");
+				});
+				
+				$(".menu2").click(function(){
+				$("#submenucont2").slideToggle("fast");
+					$("#submenucont").slideUp("fast");
+					$("#Generala").slideUp("slow");
+					$("#Driver").slideUp("slow");
+					$("#Policy").slideUp("slow");
+					$("#Household").slideUp("slow");
+					$("#Vehicle").slideUp("slow");
+				});
+			});	
+		</script>
+		
+		<!-- This function allows  -->
+		<script>
+			$(document).ready(function(){
+				$(".submenu1").click(function(){
+					$("#Driver").slideToggle("slow");
+					$("#Policy").slideUp("slow");
+					$("#Household").slideUp("slow");
+					$("#Vehicle").slideUp("slow");
+					$("#Generala").slideUp("slow");
+				});
+				
+				$(".submenu2").click(function(){
+					$("#Policy").slideToggle("slow");
+					$("#Driver").slideUp("slow");
+					$("#Household").slideUp("slow");
+					$("#Vehicle").slideUp("slow");
+					$("#Generala").slideUp("slow");
+				});
+				
+				$(".submenu3").click(function(){
+					$("#Household").slideToggle("slow");
+					$("#Policy").slideUp("slow");
+					$("#Driver").slideUp("slow");
+					$("#Vehicle").slideUp("slow");
+					$("#Generala").slideUp("slow");
+				});
+				
+				$(".submenu4").click(function(){
+					$("#Vehicle").slideToggle("slow");
+					$("#Policy").slideUp("slow");
+					$("#Household").slideUp("slow");
+					$("#Driver").slideUp("slow");
+					$("#Generala").slideUp("slow");
+				});
+				
+				$(".generala").click(function(){
+					$("#Generala").slideToggle("slow");
+					$("#Vehicle").slideUP("slow");
+					$("#Policy").slideUp("slow");
+					$("#Household").slideUp("slow");
+					$("#Driver").slideDown("slow");
+				});
+			});
+		</script>
+		
+		<!-- This function allows  -->
+		<script>
+			$(document).ready(function(){
+				$(".submenua").click(function(){
+					$("#16A").slideToggle("slow");
+					$("#16B").slideUp("slow");
+					$("#16L").slideUp("slow");
+					$("#16").slideUp("slow");
+					$("#Generalb").slideUp("slow");
+				});
+				
+				$(".submenub").click(function(){
+					$("#16B").slideToggle("slow");
+					$("#16A").slideUp("slow");
+					$("#16L").slideUp("slow");
+					$("#16").slideUp("slow");
+					$("#Generalb").slideUp("slow");
+				});
+				
+				$(".submenuc").click(function(){
+					$("#16L").slideToggle("slow");
+					$("#16B").slideUp("slow");
+					$("#16A").slideUp("slow");
+					$("#16").slideUp("slow");
+					$("#Generalb").slideUp("slow");
+				});
+				
+				$(".submenud").click(function(){
+					$("#16").slideToggle("slow");
+					$("#16B").slideUp("slow");
+					$("#16L").slideUp("slow");
+					$("#16A").slideUp("slow");
+					$("#Generalb").slideUp("slow");
+				});	
+				
+				$(".generalb").click(function(){
+					$("#Generalb").slideToggle("slow");
+					$("#16").slideUp("slow");
+					$("#16B").slideUp("slow");
+					$("#16L").slideUp("slow");
+					$("#16A").slideUp("slow");
+				});
+			});
+		</script>
+
+
+
+	</head>
+
+	<!-- This invokation of the hideInfoOnLoad fuction in the body, enables the fucntion to run when the body is webpage is fully loaded -->
+	<body onload = "hideInfoOnPageLoad()">
+	
+			<!-- Farmers logo -->
+			<div class = "row">
+			
+				<div class = "col-md-5"></div>
+					<div class = "col-md-2">
+						<div class = "bgimg" style = "height:auto; width:auto;">
+							<img src = "Farmers_logo.png" alt = "Mountain View" style = "width:15rem;height:10rem;">
+						</div>
+					</div>	
+				<div class = "col-md-5"></div>	
+			</div>
+				
+				<br></br>
+				<br></br>
+				
+			<!-- Tab for LOE and CVL-->
+			<div = class = "row">
+				<div class = "col-sm-4"></div>
+				<div class = "col-sm-4">	
+					<div class = "row">
+						<div class = "menucont">
+							<div class = "btn-group">
+								<button type="button" class="btn btn-danger menu1">Letters of Experience</button>
+								<button type="button" class="btn btn-primary menu2">Coverage Verification Letters</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "col-sm-4"></div>
+			</div>
+			
+			<br></br>
+			<br></br>
+			
+			<!-- Specific tabs for LOE -->
+			<div = "row">
+				<div class = "col-sm-3"></div>
+				<div class = "col-sm-6">	
+					<div id = "submenucont">	
+						<div class = "btn-group">
+							<button type="button" class="btn btn-success generala">General Letts</button>
+							<button type="button" class="btn btn-danger submenu1">Driver Letters</button>
+							<button type="button" class="btn btn-primary submenu2">Policy Letters</button>
+							<button type="button" class="btn btn-warning submenu3">Household Letters</button>
+							<button type="button" class="btn btn-info submenu4">Vehicle/Dwelling </button>
+						</div>	
+					</div>
+				</div>
+				<div class = "col-sm-3"></div>
+			</div>
+			
+			<!-- Specific tabs for CVL -->
+			<div = "row">
+				<div class = "col-sm-3"></div>
+				<div class = "col-sm-6">	
+					<div id = "submenucont2">
+						<div class = "btn-group">
+							<button type="button" class="btn btn-success generalb">General Letters</button>
+							<button type="button" class="btn btn-danger submenua">16A In-Force</button>
+							<button type="button" class="btn btn-primary submenub">16B Out-of-Force</button>
+							<button type="button" class="btn btn-warning submenuc" >16L In-Force</button>
+							<button type="button" class="btn btn-info submenud">16 Out-of-Force</button>
+						</div>	
+					</div>
+				</div>
+				<div class = "col-sm-3"></div>
+			</div>
+		
+			<br><br>
+			<br><br>
+
+				<div class="container" style = "padding-top: 3rem; padding-bottom: 3rem;">
+						
+					<div id = "Generala">
+					
+						<H1>General Questions</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+						
+						<div class="panel-group" id="accordion9">
+							<div class="panel panel-primary">
+								  <div class="panel-heading">
+									<h4 class="panel-title">
+									  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse1e"><b>1.</b> We are asked to create a letter but the policy number in the SR and the policy in the system for the time period given doesn't match, which do i use on the letter?</a>
+									</h4>
+								  </div>
+								  <div id="collapse1e" class="panel-collapse collapse in">
+									<div class="panel-body">Answer Coming Soon!! For now use whats in the system.  
+								    </div>
+								  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse2e"><b>2.</b>How should we list a payout amount?</a>
+								</h4>
+							  </div>
+							  <div id="collapse2e" class="panel-collapse collapse">
+								<div class="panel-body"> We should always use a "$" and also a comma seperator if the payout is above a thousand, (i.e $350.78, $3, 567.90, $21, 467. 30). 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse3e"><b>3.</b> The type of loss in the system (green screen) and customer view is different?</a>
+								</h4>
+							  </div>
+							  <div id="collapse3e" class="panel-collapse collapse">
+								<div class="panel-body"> Always use customer view to verify the type of loss and payout.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse4e"><b>4.</b> The insured is requesting a Letter of Experience be printed and mailed to them. How should I handle this request.</a>
+								</h4>
+							  </div>
+							  <div id="collapse4e" class="panel-collapse collapse">
+								<div class="panel-body">Save a copy of the a copy of the completed letter in the share drive BusOp_VendorSolutions\POSO Print\ LOE's and Coverage Letters. 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse5e"><b>5.</b>The Service Request is requesting we create a loss history.</a>
+								</h4>
+							  </div>
+							  <div id="collapse5e" class="panel-collapse collapse">
+								<div class="panel-body"> For these request we create a Household Level Letter. 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse6e"><b>6.</b>If we have two losses on the same policy with the same date but different payout amounts, how do we list it?</a>
+								</h4>
+							  </div>
+							  <div id="collapse6e" class="panel-collapse collapse">
+								<div class="panel-body"> We combine the payout amounts and list as one loss after verifying there have not been additional losses on the same date. 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse7e"><b>7.</b>Should we use the mailing address, garaging address, or physical address when typing a letter for an auto?</a>
+								</h4>
+							  </div>
+							  <div id="collapse7e" class="panel-collapse collapse">
+								<div class="panel-body"> Auto policies should always show the mailing address, if there is one. 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse8e"><b>8.</b>We're asked to create a letter with information that has not been updated on the system yet.</a>
+								</h4>
+							  </div>
+							  <div id="collapse8e" class="panel-collapse collapse">
+								<div class="panel-body"> Answer Will be here soon. 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse9e"><b>9.</b>The insured's name shows differently between the client screen and declaration page, which should we use?</a>
+								</h4>
+							  </div>
+							  <div id="collapse9e" class="panel-collapse collapse">
+								<div class="panel-body"> Always use either the name as it shows on Names in Facesheet (fire) or the name entered on the F/sheet Name if Diff on the Client/Driver Screen. If there is nothing in these fields , use the name as it has been entered on the policy. 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse10e"><b>10.</b>The name on the policy screen has a trust; should i include the trust on my letter?</a>
+								</h4>
+							  </div>
+							  <div id="collapse10e" class="panel-collapse collapse">
+								<div class="panel-body"> No. Only input the names of the insured as they would show on the declaration page. Don't add any additional verbiage, such as a trust, 'single man',or , 'sole and seperate property'. 
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse11e"><b>11.</b>What should we do if we're ask to create a letter showing the end date as a future date?</a>
+								</h4>
+							  </div>
+							  <div id="collapse11e" class="panel-collapse collapse">
+								<div class="panel-body">  Go ahead and create the letter ending it on today's date. You may also want to include in the comment section that we do not create letter for future dates.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse12e"><b>12.</b>We're asked to create a letter for a insured that was split to a different household. How do we find the info from their previous household policy?</a>
+								</h4>
+							  </div>
+							  <div id="collapse12e" class="panel-collapse collapse">
+								<div class="panel-body">  
+								</div>
+							  </div>
+							</div>
+							
+							<!--<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion9" href="#collapse10e"><b>10.</b></a>
+								</h4>
+							  </div>
+							  <div id="collapse10e" class="panel-collapse collapse">
+								<div class="panel-body">  
+								</div>
+							  </div>
+							</div>-->
+							
+						</div>
+					</div>
+					<div id = "Driver">
+					
+						<H1>Driver Level Letters</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+						
+						<div class="panel-group" id="accordion">
+							<div class="panel panel-primary">
+								  <div class="panel-heading">
+									<h4 class="panel-title">
+									  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1a"><b>1.</b> Do we list all vehicles for the Primary and the Secondary insured, whether they're rated or not?</a>
+									</h4>
+								  </div>
+								  <div id="collapse1a" class="panel-collapse collapse in">
+									<div class="panel-body">Yes! As long the insured is the Primary or Secondary insured on a policy, we can list the vehicle on the driver level letter. 
+								    </div>
+								  </div>
+							</div>
+						
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2a"><b>2.</b>We're asked to create a driver level letter with a specific vehicle that has aleady went out of force?</a>
+								</h4>
+							  </div>
+							  <div id="collapse2a" class="panel-collapse collapse">
+								<div class="panel-body"> Create the Driver Level Letter using the vehicle cancellation date as the driver cancellation date.  
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3a"><b>3.</b>What should we do if the driver is not rated on any vehicles in the IA screen.</a>
+								</h4>
+							  </div>
+							  <div id="collapse3a" class="panel-collapse collapse">
+								<div class="panel-body"> In instances like these, we navigate to the Driver Assignment(DA) screen, then under the column named OVR, search in the driver row under this column for the letter R or S. <b>R</b> means the driver is a <b>Primary</b> rated owner and <b>S</b> meaning Secondary rated owner. 
+								</div>
+							  </div>
+							</div>
+							
+						</div>
+					</div>
+					<div id = "Policy">
+						
+						<H1>Policy Level Letters</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+						
+						<div class="panel-group" id="accordion2">
+							<div class="panel panel-primary">
+								  <div class="panel-heading">
+									<h4 class="panel-title">
+									  <a data-toggle="collapse" data-parent="#accordion2" href="#collapse1b"><b>1.</b>We are asked to create a letter but the policy number in the SR and the policy in the system for the time period given doesn't match, which do i use on the letter? </a>
+									</h4>
+								  </div>
+								  <div id="collapse1b" class="panel-collapse collapse in">
+									<div class="panel-body">Answer Coming Soon!! For now use whats in the system. 
+								    </div>
+								  </div>
+							</div>
+						</div>
+					</div>
+					<div id = "Household">
+					
+						<H1>Household Level Letters</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+						
+						<div class="panel-group" id="accordion3">
+							<div class="panel panel-primary">
+								  <div class="panel-heading">
+									<h4 class="panel-title">
+									  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse1c"><b>1.</b> We're asked to create a letter for all cancelled vehicles?</a>
+									</h4>
+								  </div>
+								  <div id="collapse1c" class="panel-collapse collapse in">
+									<div class="panel-body">We create a Household level letter to include all inforce vehicle and policys within the time period given. 
+								    </div>
+								  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3c"><b>3.</b>Do we list vehicles in household level letters?</a>
+								</h4>
+							  </div>
+							  <div id="collapse3c" class="panel-collapse collapse">
+								<div class="panel-body">Yes, all inforce vehicles within the time period given.
+								</div>
+							  </div>
+							</div>	
+						</div>
+					</div>
+					<div id = "Vehicle">
+						
+						<H1>Vehicle Level Letters</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+						
+						<div class="panel-group" id="accordion4">
+							<div class="panel panel-primary">
+								  <div class="panel-heading">
+									<h4 class="panel-title">
+									  <a data-toggle="collapse" data-parent="#accordion4" href="#collapse1d"><b>1.</b> Do we type LOE's for Trailers.</a>
+									</h4>
+								  </div>
+								  <div id="collapse1d" class="panel-collapse collapse in">
+									<div class="panel-body">Yes, we will type LOE's for trailers. Use the vehice level letter <strong>ONLY</strong> for trailers. Also, use the serial number of the trailer as the VIN number. In your letter replace VIN with Serial manually, then add the serial number of the trailer. 
+								    </div>
+								  </div>
+							</div>
+						
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion4" href="#collapse3d"><b>3.</b>What losses do we list when creating an LOE for a trailer?</a>
+								</h4>
+							  </div>
+							  <div id="collapse4d" class="panel-collapse collapse">
+								<div class="panel-body"> List only losses associated with the trailer. 
+								</div>
+							  </div>
+							</div>
+						</div>
+					</div>
+					
+					<div id = "Generalb">
+					
+						<H1>General Questions</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+						
+						<div class="panel-group" id="accordion10">
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion10" href="#collapse1ee"><b>1.</b>We're asked to create a CVL up to today's date. Unfortunately this time period includes one term and are few extra days or months. What should we do? </a>
+								</h4>
+							  </div>
+							  <div id="collapse1ee" class="panel-collapse collapse in">
+								<div class="panel-body"> Create a letter for the one term, then create a second letter include the extra days or months.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion10" href="#collapse2ee"><b>2.</b>We're asked to create a letter for more than one term.</a>
+								</h4>
+							  </div>
+							  <div id="collapse2ee" class="panel-collapse collapse">
+								<div class="panel-body"> Please push back the SR indicating that we're only allowed to do are CVL for one term. This information can also be found on a guide.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion10" href="#collapse3ee"><b>3.</b>Do we show thousands on liability limits.</a>
+								</h4>
+							  </div>
+							  <div id="collapse3ee" class="panel-collapse collapse">
+								<div class="panel-body"> No. The limits can be typed as they appear in the system(i.e 100/300/100).
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion10" href="#collapse4ee"><b>4.</b>Do we list all coverages, such as floaters and towing?</a>
+								</h4>
+							  </div>
+							  <div id="collapse4ee" class="panel-collapse collapse">
+								<div class="panel-body"> Only if requested.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion10" href="#collapse5ee"><b>5.</b>The insured is requesting a Covereage Verification Letter be printed and mailed to them. How should I handle this request.</a>
+								</h4>
+							  </div>
+							  <div id="collapse5ee" class="panel-collapse collapse">
+								<div class="panel-body"> Save a copy of the a copy of the completed letter in the share drive BusOp_VendorSolutions\POSO Print\ LOE's and Coverage Letters.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion10" href="#collapse6ee"><b>6.</b>The insured's the name shows differently between the client screen and declaration page, which should we use?</a>
+								</h4>
+							  </div>
+							  <div id="collapse6ee" class="panel-collapse collapse">
+								<div class="panel-body"> Always use either the name as it shows on Names in Facesheet (fire) or the name entered on the F/sheet Name if Diff on the Client/Driver Screen. If there is 
+														nothing in these fields , use the name as it has been entered on the policy.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion10" href="#collapse7ee"><b>7.</b>The name on the policy screen has a trust; should i include the trust n my letter?</a>
+								</h4>
+							  </div>
+							  <div id="collapse7ee" class="panel-collapse collapse">
+								<div class="panel-body"> No. Only input the names of the insured as they would show on the declaration page. Don't add any additional verbiage, such as a trust, 'single man',or , 'sole 
+														and seperate property'.
+								</div>
+							  </div>
+							</div>
+						</div> <!-- accordion -->
+					</div>
+					<div id = "16A">
+					
+						<H1>16A - In-Force - Insured Request</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+
+						<div class="panel-group" id="accordion5">
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion5" href="#collapse1aa"><b>1.</b>We're asked to create a CVL up to today's date. Unfortunately this time period includes one term and are few extra days or months. What should we do? </a>
+								</h4>
+							  </div>
+							  <div id="collapse1aa" class="panel-collapse collapse in">
+								<div class="panel-body"> Create a letter for the one term, then create a second letter include the extra days or months.
+								</div>
+							  </div>
+							</div>
+
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion5" href="#collapse2aa"><b>2.</b>I have a request for a prior term of a policy that is still alive, should i use an in-force or an out-of-force letter?</a>
+								</h4>
+							  </div>
+							  <div id="collapse2aa" class="panel-collapse collapse">
+								<div class="panel-body"> If you're typing a letter for a completed term of policy, always use the in-force letter. 
+								</div>
+							  </div>
+							</div>
+						</div> <!-- accordion -->
+					</div>
+					<div id = "16B">
+						
+						<H1>16B - Out-of-Force - Insured Request</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+					
+						
+						<div class="panel-group" id="accordion6">
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion6" href="#collapse1bb"><b>1.</b>We're asked to create a CVL up to today's date. Unfortunately this time period includes one term and are few extra days or months. What should we do? </a>
+								</h4>
+							  </div>
+							  <div id="collapse1bb" class="panel-collapse collapse in">
+								<div class="panel-body"> Create a letter for the one term, then create a second letter include the extra days or months.
+								</div>
+							  </div>
+							</div>
+					
+						</div> <!-- accordion -->
+					</div>
+					<div id = "16L">
+						
+						<H1>16L - In-Force - Lienholder Request</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+					
+						<div class="panel-group" id="accordion7">
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion7" href="#collapse1cc"><b>1.</b>We're asked to create a CVL up to today's date. Unfortunately this time period includes one term and are few extra days or months. What should we do? </a>
+								</h4>
+							  </div>
+							  <div id="collapse1cc" class="panel-collapse collapse in">
+								<div class="panel-body"> Create a letter for the one term, then create a second letter include the extra days or months.
+								</div>
+							  </div>
+							</div>
+							
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion5" href="#collapse2cc"><b>2.</b>I have a request for a prior term of a policy that is still alive, should i use an in-force or an out-of-force letter?</a>
+								</h4>
+							  </div>
+							  <div id="collapse2cc" class="panel-collapse collapse">
+								<div class="panel-body"> If you're typing a letter for a completed term of policy, always use the in-force letter. 
+								</div>
+							  </div>
+							</div>
+
+						</div> <!-- accordion -->
+					</div>
+					<div id = "16">
+						
+						<H1>16 - Out-of-Force - Lienholder Request</H1>
+						  
+						<p><strong>Note:</strong> Please <strong>Contact</strong> Crystel Victor or Gerlyn Graneau for any information or updates you disagree with or you feel should be added.</p>
+					
+						<div class="panel-group" id="accordion8">
+							<div class="panel panel-primary">
+							  <div class="panel-heading">
+								<h4 class="panel-title">
+								  <a data-toggle="collapse" data-parent="#accordion8" href="#collapse1dd"><b>1.</b>We're asked to create a CVL up to today's date. Unfortunately this time period includes one term and are few extra days or months. What should we do? </a>
+								</h4>
+							  </div>
+							  <div id="collapse1dd" class="panel-collapse collapse in">
+								<div class="panel-body"> Create a letter for the one term, then create a second letter include the extra days or months.
+								</div>
+							  </div>
+							</div>
+
+						</div> <!-- accordion -->
+					</div>
+										
+				</div>	<!-- end of container -->
+				
+				<div class="container-fluid" id="footer" style="height:auto;">
+					<div class="row"  style="width:auto;">
+						<div class="col-sm-12 " ><p class="footer-text" align="middle">Created by Lee Daniel</p></div>
+					</div>
+				</div>	
+				
+</body>
+</html>
+
+
